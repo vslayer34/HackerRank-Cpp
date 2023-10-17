@@ -6,10 +6,9 @@ void printText(std::string text)
     std::cout << text << '\n';
 }
 
-int main()
-{
-    int number { 100 };
 
+void setTextPerNumber(int number)
+{
     if (number == 1)
         printText("one");
     else if (number == 2)
@@ -28,6 +27,21 @@ int main()
         printText("eight");
     else if (number == 9)
         printText("nine");
+    else if (number % 2 == 0)
+        printText("even");
     else
-        printText("Greater than 9");
+        printText("odd");
+}
+
+int main()
+{
+    int startingNumber { };
+    int endingNumber { };
+
+    std::cin >> startingNumber >> endingNumber;
+
+    for (int i = startingNumber; i <= endingNumber; i++)
+    {
+        setTextPerNumber(i);
+    }
 }
